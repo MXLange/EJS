@@ -1,0 +1,40 @@
+<div
+        class="col-12 vh-100 w-100 d-flex flex-wrap align-items-center justify-content-center bg-primary p-0"
+>
+    <div class="col-11 col-sm-8 col-md-6 col-lg-4 bg-white rounded p-4">
+        <form id="six-digits-form" method="post">
+            <div class="form-group mb-4">
+                <h5 class="text-center mb-3">Código</h5>
+                <div class="row align-items-center justify-content-center p-0">
+                    <input
+                            type="text"
+                            maxlength="6"
+                            class="col-6 text-center input-6-digits rounded border border-secondary-subtle m-1 p-2"
+                            name="six_digits"
+                            autofocus
+                            style="font-size: 2rem;"
+                    />
+                    <% if(errors?.six_digits) { %>
+                        <span class="text-danger text-center">
+                            <%= errors.six_digits %>
+                        </span>
+                    <% } %>
+                </div>
+            </div>
+            <button type="submit" class="col-12 btn btn-success rounded-pill">
+                CONFIRMAR
+            </button>
+            <% if(errors?.six_digits === "Código expirado") { %>
+                <div class="row justify-content-center mt-2">
+                    <a class="text-center" href="/login">Voltar para tela de login</a>
+                </div>
+            <% } %>
+        </form>
+    </div>
+</div>
+<script>
+    let six_digits_form = document.getElementById("six-digits-form");
+    six_digits_form.addEventListener("submit", function(e) {
+        e.preventDefault;
+    });
+</script>

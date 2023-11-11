@@ -1,0 +1,28 @@
+<div
+    class="col-12 vh-100 w-100 d-flex flex-wrap align-items-center justify-content-center bg-primary p-0"
+>
+    <div class="col-11 col-sm-8 col-md-6 col-lg-4 bg-white rounded p-4">
+        <form id="login-form" method="post">
+            <div class="form-group">
+                <label class="mb-1">Email:</label>
+                <input
+                    type="email"
+                    class="col-12 rounded border border-secondary-subtle p-2"
+                    name="email"
+                />
+                <% if(errors?.login) { %>
+                <span class="text-danger"> <%= errors.login %> </span>
+                <% } %>
+            </div>
+            <button type="submit" class="col-12 btn btn-success rounded-pill mt-3">
+                ENTRAR
+            </button>
+        </form>
+    </div>
+</div>
+<script>
+    let login_form = document.getElementById("login-form");
+    login_form.addEventListener("submit", function (e) {
+        e.preventDefault;
+    });
+</script>
